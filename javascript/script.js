@@ -40,12 +40,12 @@ const db = [
     ],
   },
   {
-    question: "Apart from <b> tag, what other tag makes text bold ?",
+    question: "Apart from &lt b &gt tag, what other tag makes text bold ?",
     options: [
-      { text: "<fat>", correct: false },
-      { text: "<emp>", correct: false },
-      { text: "<strong>", correct: true },
-      { text: "<black>", correct: false },
+      { text: "&lt fat &gt", correct: false },
+      { text: "&lt emp &gt", correct: false },
+      { text: "&lt strong &gt", correct: true },
+      { text: "&lt black &gt", correct: false },
     ],
   },
   {
