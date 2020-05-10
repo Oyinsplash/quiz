@@ -13,30 +13,48 @@ const summary = document.querySelector("total-score");
 // store all questions in db array
 const db = [
   {
-    question: "Does this game work on Mac, Pc, or Linux?1",
+    question: "	HTML is what type of language ?",
     options: [
-      { text: "Just Mac", correct: false },
-      { text: "windows", correct: false },
-      { text: "Andriod", correct: false },
-      { text: "All of them", correct: true },
+      { text: "Scripting Language", correct: false },
+      { text: "Markup Language", correct: true },
+      { text: "Programming Language", correct: false },
+      { text: "Network Protocol", correct: false },
     ],
   },
   {
-    question: "Does this game work on Mac, Pc, or Linux?2",
+    question: "HTML uses",
     options: [
-      { text: "Just Mac", correct: false },
-      { text: "windows", correct: false },
-      { text: "Andriod", correct: false },
-      { text: "All of them", correct: true },
+      { text: "User defined tags", correct: false },
+      { text: "Pre-specified tags", correct: false },
+      { text: "Fixed tags defined by the language", correct: true },
+      { text: "Tags only for linking", correct: false },
     ],
   },
   {
-    question: "Does this game work on Mac, Pc, or Linux?",
+    question: "Fundamental HTML Block is known as ___________.",
     options: [
-      { text: "Just Mac", correct: false },
-      { text: "windows", correct: false },
-      { text: "Andriod", correct: false },
-      { text: "All of them", correct: true },
+      { text: "HTML Body", correct: false },
+      { text: "HTML Element", correct: false },
+      { text: "HTML Element", correct: false },
+      { text: "HTML Tag", correct: true },
+    ],
+  },
+  {
+    question: "Apart from <b> tag, what other tag makes text bold ?",
+    options: [
+      { text: "<fat>", correct: false },
+      { text: "<emp>", correct: false },
+      { text: "<strong>", correct: true },
+      { text: "<black>", correct: false },
+    ],
+  },
+  {
+    question: "HTML web pages can be read and rendered by _________.",
+    options: [
+      { text: "Compiler", correct: false },
+      { text: "Web Browser", correct: true },
+      { text: "Server", correct: false },
+      { text: "Interpreter", correct: false },
     ],
   },
 ];
@@ -86,7 +104,8 @@ function startApp() {
     button.innerHTML = db[count - 1].options[select].text;
     // adds class of btn to each button
     button.classList.add("btn");
-    button.style.cssText = "width: 7rem; padding: 0.5rem 0.5rem; background-color: #24116A; color: #FCFAFC; ";
+    button.style.cssText =
+      "width: 7rem; padding: 0.5rem 0.5rem; background-color: #24116A; color: #FCFAFC; ";
 
     // if (control.disabled === false) {
     //   button.disabled = true
@@ -103,7 +122,8 @@ function startApp() {
       if (check) {
         let markGotten = 50;
         scoreCalculator += markGotten;
-        button.style.cssText = "width: 7rem; padding: 0.5rem 0.5rem; background-color: #59D590; color: #FCFAFC;"
+        button.style.cssText =
+          "width: 7rem; padding: 0.5rem 0.5rem; background-color: #59D590; color: #FCFAFC;";
         button.textContent = "correct";
       }
 
@@ -111,7 +131,8 @@ function startApp() {
       else {
         let markGotten = 0;
         scoreCalculator += markGotten;
-        button.style.cssText = "width: 7rem; padding: 0.5rem 0.5rem; background-color: #EF0100; color: #FCFAFC;"
+        button.style.cssText =
+          "width: 7rem; padding: 0.5rem 0.5rem; background-color: #EF0100; color: #FCFAFC;";
         button.textContent = "wrong";
       }
       control.disabled = false;
@@ -122,7 +143,6 @@ function startApp() {
     //   ;
     // }
     answerContainer.appendChild(button);
-    
   }
 }
 
