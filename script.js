@@ -69,12 +69,12 @@ function startApp() {
     quizNumber.classList.remove("hide");
     control.innerHTML = "next";
     // control.disabled = true;
-    console.log("yea1")
+    // console.log("yea1")
     count = 0;
     score.innerHTML = 0;
   }
   // Changes next button to play again if questions have beenn exhausted
-  else if ( control.innerHTML === "next" && db.length === count) {
+  else if (control.innerHTML === "next" && db.length === count) {
     control.innerHTML = "play again";
     quizContainer.classList.add("hide");
     questionElement.classList.add("hide");
@@ -130,6 +130,8 @@ function startApp() {
         button.style.cssText =
           "width: 7rem; padding: 0.5rem 0.5rem; background-color: #59D590; color: #FCFAFC;";
         button.textContent = "correct";
+        // button.setAttribute("marked", true);
+        button.disabled = true;
       }
 
       // Add style for wrong answer
@@ -140,11 +142,11 @@ function startApp() {
           "width: 7rem; padding: 0.5rem 0.5rem; background-color: #EF0100; color: #FCFAFC;";
         button.textContent = "wrong";
       }
+
       control.disabled = false;
       score.innerHTML = scoreCalculator;
     });
 
-    
     answerContainer.appendChild(button);
   }
 }
