@@ -9,7 +9,7 @@ const option4 = document.querySelector("#option4");
 const quizNumber = document.querySelector(".quiz_number");
 const score = document.querySelector(".score");
 const summary = document.querySelector("total-score");
-
+const buttons = document.querySelectorAll(".btn");
 // store all questions in db array
 const db = [
   {
@@ -69,13 +69,18 @@ function startApp() {
     quizNumber.classList.remove("hide");
     control.innerHTML = "next";
     // control.disabled = true;
+    console.log("yea1")
     count = 0;
+    score.innerHTML = 0;
   }
   // Changes next button to play again if questions have beenn exhausted
-  else if (control.innerHTML == "next" && db.length === count) {
+  else if ( control.innerHTML === "next" && db.length === count) {
     control.innerHTML = "play again";
     quizContainer.classList.add("hide");
-    quizNumber.classList.add("hide");
+    questionElement.classList.add("hide");
+    answerContainer.innerHTML = " ";
+    buttons.classList.add("hide");
+    quizNumber.textContent = " ";
   }
   // Ensures a user picks an answer before moving to the next question
   if (control.innerHTML === "next") {
@@ -139,9 +144,7 @@ function startApp() {
       score.innerHTML = scoreCalculator;
     });
 
-    // if (control.disabled === false) {
-    //   ;
-    // }
+    
     answerContainer.appendChild(button);
   }
 }

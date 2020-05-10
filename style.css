@@ -50,6 +50,7 @@ main {
   background-image: url();
   font-style: oblique;
   text-align: center;
+  margin-right: 1rem;
   /* background-size: cover; */
 }
 
