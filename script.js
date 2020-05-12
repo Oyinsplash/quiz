@@ -63,32 +63,32 @@ let count = 0;
 let scoreCalculator = 0;
 
 function startApp() {
-  // Displays quiz on the click of the start button
-  if (control.innerHTML === "start" || control.innerHTML === "play again") {
+  // Displays quiz on the click of the Start button
+  if (control.innerHTML === "Start" || control.innerHTML === "Play Again") {
     quizContainer.classList.remove("hide");
     quizNumber.classList.remove("hide");
-    control.innerHTML = "next";
+    control.innerHTML = "Next";
     // control.disabled = true;
-    // console.log("yea1")
+    control.style.cssText = "width: 60%";
+    console.log("yea1")
     count = 0;
     score.innerHTML = 0;
   }
-  // Changes next button to play again if questions have beenn exhausted
-  else if (control.innerHTML === "next" && db.length === count) {
-    control.innerHTML = "play again";
+  // Changes Next button to Play Again if questions have beenn exhausted
+  else if (control.innerHTML === "Next" && db.length === count) {
+    control.innerHTML = "Play Again";
     quizContainer.classList.add("hide");
-    questionElement.classList.add("hide");
+    questionElement.innerHTML = " ";
     answerContainer.innerHTML = " ";
     buttons.classList.add("hide");
     quizNumber.textContent = " ";
   }
-  // Ensures a user picks an answer before moving to the next question
-  if (control.innerHTML === "next") {
+  // Ensures a user picks an answer before moving to the Next question
+  if (control.innerHTML === "Next") {
     control.disabled = true;
   }
-
-  // Remove previous aswer button when next is clicked
-  if (control.innerHTML === "next" || control.innerHTML === "play again") {
+  // Remove previous aswer button when Next is clicked
+  if (control.innerHTML === "Next" || control.innerHTML === "Play Again") {
     answerContainer.innerHTML = " ";
   }
   // counts number of displayed questions
