@@ -36,12 +36,12 @@ main {
   .main {
     width: 80%;
   }
+  .quiz-container {
+    text-align: center;
+  }
   .answer_container {
-    flex-direction: column;
-    width: 60%;
     justify-content: center;
-    align-content: center;
-    margin-bottom: 20px;
+    align-items: center;
   }
 }
 .header {
